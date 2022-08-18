@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+[DisallowMultipleComponent]
+public class GameManager : SingletonMonobehaviour<GameManager>
 {
-    public CardDetailSO inputCard1;
-    public CardDetailSO inputCard2;
-
-    public void HiddenCardLogic()
-    {
-
-    }
-
+    // Dependencies References
+    public GameObject cardListHolder;
+    public CardDetailSO selectedCard;
+    public GameObject panelChoiceCard;
+    public GameObject hiddenCardImageSelected;
+    public GameObject hiddenCardPanel;
 }

@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class PanelChoiceCard : MonoBehaviour
 {
-    public ReferenceManager referenceManager;
     public Transform cardListParent;
 
     private void OnEnable()
     {
-        foreach (Transform child in referenceManager.cardListHolder.transform)
+        foreach (Transform child in GameManager.Instance.cardListHolder.transform)
         {
             var cardChoice = Instantiate(GameResource.Instance.cardChoice, cardListParent);
             cardChoice.GetComponent<Image>().sprite = child.GetComponent<Card>().cardDetail.cardSprite;

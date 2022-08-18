@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class CardChoice : MonoBehaviour
 {
     public CardDetailSO cardDetail;
-    private ReferenceManager referenceManager;
     
     public void SelectCard()
     {
-        referenceManager = FindObjectOfType<ReferenceManager>();
-        referenceManager.selectedCard = cardDetail;
-        referenceManager.panelChoiceCard.SetActive(false);
-        referenceManager.hiddenCardImageSelected.GetComponent<Image>().sprite = cardDetail.cardSprite;
-        referenceManager.hiddenCardPanel.SetActive(true);
+        GameManager.Instance.selectedCard = cardDetail;
+        GameManager.Instance.panelChoiceCard.SetActive(false);
+        GameManager.Instance.hiddenCardImageSelected.GetComponent<Image>().sprite = cardDetail.cardSprite;
+        GameManager.Instance.hiddenCardPanel.SetActive(true);
     }
 }

@@ -6,12 +6,11 @@ using TMPro;
 
 public class HiddenCardPanel : MonoBehaviour
 {
-    public ReferenceManager referenceManager;
     public TMP_InputField inputText;
 
     public void HiddenCardSubmit()
     {
-        if(referenceManager.selectedCard.hiddenCardID == inputText.text)
+        if(GameManager.Instance.selectedCard.hiddenCardID == inputText.text)
         {
             Debug.Log("berhasil");
         }
@@ -24,6 +23,6 @@ public class HiddenCardPanel : MonoBehaviour
     public void SelectCardChoice()
     {
         this.gameObject.SetActive(false);
-        referenceManager.panelChoiceCard.SetActive(true);
+        GameManager.Instance.panelChoiceCard.SetActive(true);
     }
 }
