@@ -16,6 +16,6 @@ MonoBehaviour:
   cardDescription: Ini kartu partner
   cardID: 23
   combineCardsProducesID: 72
-  hiddenCardID: 111
-  unlockCardAnswer: 0
-  unlockCardID: 0
+  hiddenCardID: 49
+  unlockCardAnswer: 1
+  unlockCardID: 49

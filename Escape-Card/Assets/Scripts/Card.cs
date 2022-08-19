@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] private Transform panelTransform;
     public CardDetailSO cardDetail;
 
     private void Start()
@@ -24,7 +23,7 @@ public class Card : MonoBehaviour
                 return;
             }
             Debug.Log("klik");
-            var cardPanel = Instantiate(GameResource.Instance.detailPanel, panelTransform);
+            var cardPanel = Instantiate(GameResource.Instance.detailPanel, GameManager.Instance.panelTransform);
             cardPanel.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = cardDetail.cardSprite;
             cardPanel.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = cardDetail.cardDescription;
         }

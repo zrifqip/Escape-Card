@@ -31,4 +31,6 @@ public class GameResource : MonoBehaviour
 
     public GameObject cardChoice;
 
+    public GameObject card;
+
 }

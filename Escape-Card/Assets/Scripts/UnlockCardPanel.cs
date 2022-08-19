@@ -4,28 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// Class ini gabung sama UnlockCardPanel, soalnya fungsinya bnyk yg sama
-public class HiddenCardPanel : MonoBehaviour
+public class UnlockCardPanel : MonoBehaviour
 {
     public TMP_InputField inputText;
 
     private void OnEnable()
     {
-        GameManager.Instance.activePanel = ActivePanel.hidden;
+        GameManager.Instance.activePanel = ActivePanel.unlock;
     }
 
-    public void HiddenCardSubmit()
+    public void UnlockCardSubmit()
     {
-        if(GameManager.Instance.selectedCard.hiddenCardID == inputText.text && inputText.text != "0")
+        if (GameManager.Instance.selectedCard.unlockCardAnswer == inputText.text && inputText.text != "0")
         {
-            Debug.Log("berhasil");
+            Debug.Log("benar");
             var generatedCard = Instantiate(GameResource.Instance.card, GameManager.Instance.cardListHolder.transform);
-            generatedCard.transform.GetComponent<Card>().cardDetail = GameManager.Instance.GetCardDetailByID(inputText.text);
+            generatedCard.transform.GetComponent<Card>().cardDetail = GameManager.Instance.GetCardDetailByID(GameManager.Instance.selectedCard.unlockCardID);
             // Ini berhasil, cuma kurang diadjust spawn positionnya
         }
         else
         {
-            Debug.Log("gagal");
+            Debug.Log("Salah");
             this.gameObject.SetActive(false);
             GameManager.Instance.activePanel = ActivePanel.main;
         }
