@@ -24,9 +24,4 @@ public class PanelChoiceCard : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
-    public void ExitPanel()
-    {
-        this.gameObject.SetActive(false);
-    }
 }

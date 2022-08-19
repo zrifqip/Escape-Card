@@ -16,13 +16,10 @@ public class CombineCardPanel : MonoBehaviour
             Debug.Log("tercombine");
             var generatedCard = Instantiate(GameResource.Instance.card, GameManager.Instance.cardListHolder.transform);
             generatedCard.transform.GetComponent<Card>().cardDetail = GameManager.Instance.GetCardDetailByID(GameManager.Instance.selectedCombineCard1.combineCardsProducesID);
-            // Ini berhasil, cuma kurang diadjust spawn positionnya
         }
         else
         {
             Debug.Log("tidak combine");
-            this.gameObject.SetActive(false);
-            GameManager.Instance.activePanel = ActivePanel.main;
         }
     }
 
@@ -40,5 +37,11 @@ public class CombineCardPanel : MonoBehaviour
         GameManager.Instance.panelChoiceCard.SetActive(true);
         GameManager.Instance.choiceCombineCard2 = true;
         GameManager.Instance.choiceCombineCard1 = false;
+    }
+
+    public void OpenPanelCombine()
+    {
+        GameManager.Instance.CloseAllPanel();
+        this.gameObject.SetActive(true);
     }
 }

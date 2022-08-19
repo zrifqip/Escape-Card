@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detailPanel: {fileID: 2487672344737288345, guid: 0fc400af9b9e36341b34adb98954785e, type: 3}
   cardChoice: {fileID: 8363853093573485642, guid: b0f54badd2022df4ab1222ad48fefde3, type: 3}
-  card: {fileID: 78336825953775265, guid: 52a3e14869c968343baad6ef434e155a, type: 3}
+  card: {fileID: 8363853093573485642, guid: e5a77d8eb3dfbf24a9c8435123771c9b, type: 3}

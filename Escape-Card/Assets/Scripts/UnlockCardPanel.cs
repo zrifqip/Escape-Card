@@ -20,13 +20,10 @@ public class UnlockCardPanel : MonoBehaviour
             Debug.Log("benar");
             var generatedCard = Instantiate(GameResource.Instance.card, GameManager.Instance.cardListHolder.transform);
             generatedCard.transform.GetComponent<Card>().cardDetail = GameManager.Instance.GetCardDetailByID(GameManager.Instance.selectedCard.unlockCardID);
-            // Ini berhasil, cuma kurang diadjust spawn positionnya
         }
         else
         {
             Debug.Log("Salah");
-            this.gameObject.SetActive(false);
-            GameManager.Instance.activePanel = ActivePanel.main;
         }
     }
 
@@ -34,5 +31,11 @@ public class UnlockCardPanel : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         GameManager.Instance.panelChoiceCard.SetActive(true);
+    }
+
+    public void OpenPanelUnlock()
+    {
+        GameManager.Instance.CloseAllPanel();
+        this.gameObject.SetActive(true);
     }
 }

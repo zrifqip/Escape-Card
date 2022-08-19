@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonobehaviour<GameManager>
@@ -15,6 +16,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     public CardDetailSO selectedCombineCard2;
     public bool choiceCombineCard1 = false;
     public bool choiceCombineCard2 = false;
+    public Canvas canvas;
 
     // Each Panel reference
     public GameObject hiddenCardImageSelected;
@@ -42,5 +44,12 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
 
         return null;
+    }
+
+    public void CloseAllPanel()
+    {
+        hiddenCardPanel.SetActive(false);
+        unlockCardPanel.SetActive(false);
+        combineCardPanel.SetActive(false);
     }
 }
