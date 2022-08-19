@@ -29,7 +29,6 @@ public class HiddenCardPanel : MonoBehaviour
 
     public void SelectCardChoice()
     {
-        this.gameObject.SetActive(false);
         GameManager.Instance.panelChoiceCard.SetActive(true);
     }
 

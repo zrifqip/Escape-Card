@@ -18,12 +18,10 @@ public class CardChoice : MonoBehaviour
             {
                 case ActivePanel.hidden:
                     GameManager.Instance.hiddenCardImageSelected.GetComponent<Image>().sprite = cardDetail.cardSprite;
-                    GameManager.Instance.hiddenCardPanel.SetActive(true);
                     break;
 
                 case ActivePanel.unlock:
                     GameManager.Instance.unlockCardImageSelected.GetComponent<Image>().sprite = cardDetail.cardSprite;
-                    GameManager.Instance.unlockCardPanel.SetActive(true);
                     break;
 
             }
@@ -36,7 +34,6 @@ public class CardChoice : MonoBehaviour
                 GameManager.Instance.panelChoiceCard.SetActive(false);
 
                 GameManager.Instance.combineCardImageSelected1.GetComponent<Image>().sprite = cardDetail.cardSprite;
-                GameManager.Instance.combineCardPanel.SetActive(true);
             }
             else
             {
@@ -44,7 +41,6 @@ public class CardChoice : MonoBehaviour
                 GameManager.Instance.panelChoiceCard.SetActive(false);
 
                 GameManager.Instance.combineCardImageSelected2.GetComponent<Image>().sprite = cardDetail.cardSprite;
-                GameManager.Instance.combineCardPanel.SetActive(true);
             }
         }
         

@@ -11,7 +11,8 @@ public class CombineCardPanel : MonoBehaviour
 
     public void CombineCardSubmit()
     {
-        if (GameManager.Instance.selectedCombineCard1.combineCardsProducesID == GameManager.Instance.selectedCombineCard2.combineCardsProducesID && GameManager.Instance.selectedCombineCard1.combineCardsProducesID != "0")
+        if (GameManager.Instance.selectedCombineCard1.combineCardsProducesID == GameManager.Instance.selectedCombineCard2.combineCardsProducesID && GameManager.Instance.selectedCombineCard1.combineCardsProducesID != "0" && 
+            GameManager.Instance.selectedCombineCard1.cardID != GameManager.Instance.selectedCombineCard2.cardID)
         {
             Debug.Log("tercombine");
             var generatedCard = Instantiate(GameResource.Instance.card, GameManager.Instance.cardListHolder.transform);
@@ -25,7 +26,6 @@ public class CombineCardPanel : MonoBehaviour
 
     public void SelectCardChoice1()
     {
-        this.gameObject.SetActive(false);
         GameManager.Instance.panelChoiceCard.SetActive(true);
         GameManager.Instance.choiceCombineCard1 = true;
         GameManager.Instance.choiceCombineCard2 = false;
@@ -33,7 +33,6 @@ public class CombineCardPanel : MonoBehaviour
 
     public void SelectCardChoice2()
     {
-        this.gameObject.SetActive(false);
         GameManager.Instance.panelChoiceCard.SetActive(true);
         GameManager.Instance.choiceCombineCard2 = true;
         GameManager.Instance.choiceCombineCard1 = false;
