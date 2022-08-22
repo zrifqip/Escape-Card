@@ -46,6 +46,19 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         return null;
     }
 
+    // Existing Card
+    public GameObject GetCardByID(string cardID)
+    {
+        foreach(Transform child in cardListHolder.transform)
+        {
+            if(child.GetComponent<Card>().cardDetail.cardID == cardID)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
+    }
+
     public void CloseAllPanel()
     {
         hiddenCardPanel.SetActive(false);

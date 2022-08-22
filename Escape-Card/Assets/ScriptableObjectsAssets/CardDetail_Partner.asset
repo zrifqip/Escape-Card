@@ -15,7 +15,7 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: e9978e300f3ed5d4aaa9f8fbcb3aa9c1, type: 3}
   cardDescription: Ini kartu partner
   cardID: 23
-  combineCardsProducesID: 72
-  hiddenCardID: 49
+  combineCardsProducesID: 0
+  hiddenCardID: 79
   unlockCardAnswer: 1
   unlockCardID: 49

@@ -17,9 +17,18 @@ public class UnlockCardPanel : MonoBehaviour
     {
         if (GameManager.Instance.selectedCard.unlockCardAnswer == inputText.text && inputText.text != "0")
         {
+            if(GameManager.Instance.GetCardByID(GameManager.Instance.selectedCard.unlockCardID) != null)
+            {
+                Debug.Log("Udah pernah keunlock");
+                return;
+            }
+
             Debug.Log("benar");
             var generatedCard = Instantiate(GameResource.Instance.card, GameManager.Instance.cardListHolder.transform);
             generatedCard.transform.GetComponent<Card>().cardDetail = GameManager.Instance.GetCardDetailByID(GameManager.Instance.selectedCard.unlockCardID);
+
+            // Misal terunlock, maka kartu akan hilang
+            //Destroy(GameManager.Instance.GetCardByID(GameManager.Instance.selectedCard.cardID));
         }
         else
         {

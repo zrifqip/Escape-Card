@@ -11,10 +11,12 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
     private RectTransform rectTransform;
     private bool isDraged = false;
     private Vector3 originPosition;
+    private CanvasGroup canvasGroup;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     private void Start()
@@ -38,12 +40,16 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IB
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
+        canvasGroup.alpha = 0.6f;
+        canvasGroup.blocksRaycasts = false;
         isDraged = true;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("End drag");
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
     }
 
     public void OnDrag(PointerEventData eventData)
